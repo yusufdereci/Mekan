@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Place of the Month — Mekan</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/place-of-month.css" />
+  <link rel="stylesheet" href="../css/comments.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="home.html" class="nav-logo">📍 Mekan</a>
+    <div class="nav-links">
+      <a href="home.html" class="nav-link" data-i18n="navMap">🗺️ Map</a>
+      <a href="place-of-month.html" class="nav-link active" data-i18n="navPlaceOfMonth">🏆 Place of the Month</a>
+      <a href="about.html" class="nav-link" data-i18n="navAbout">ℹ️ About</a>
+      <a href="comments_page.html" class="nav-link" data-i18n="navComments">💬 Reviews</a>
+    </div>
+    <div class="nav-right">
+      <button id="lang-btn" class="nav-btn">EN</button>
+      <div class="nav-user" id="nav-user">
+        <span class="nav-username" id="nav-username"></span>
+        <div class="nav-dropdown">
+          <a href="home.html" data-i18n="pomNavBack">🗺️ Back to Map</a>
+          <a href="#" id="nav-logout" data-i18n="navLogout">🚪 Sign Out</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pom-container">
+
+    <div class="pom-header">
+      <div class="pom-badge" data-i18n="pomBadge">🏆 Place of the Month</div>
+      <h1 id="pom-title" data-i18n="pomLoading">Loading...</h1>
+      <p id="pom-period" class="pom-period"></p>
+    </div>
+
+    <div class="pom-card" id="pom-card">
+
+      <div class="pom-card-left">
+        <div class="pom-score-ring">
+          <canvas id="pom-chart" width="180" height="180"></canvas>
+          <div class="pom-score-label">
+            <span id="pom-score">—</span>
+            <small data-i18n="pomSatisfaction">Satisfaction</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="pom-card-right">
+        <h2 id="pom-name">—</h2>
+        <div class="pom-stats">
+          <div class="pom-stat">
+            <span id="pom-rating">—</span>
+            <small data-i18n="pomAvgRating">Avg Rating</small>
+          </div>
+          <div class="pom-stat">
+            <span id="pom-reviews">—</span>
+            <small data-i18n="pomTotalReviews">Total Reviews</small>
+          </div>
+          <div class="pom-stat">
+            <span id="pom-positive">—</span>
+            <small data-i18n="pomPositive">Positive Reviews</small>
+          </div>
+        </div>
+
+        <div class="pom-bar-wrap">
+          <div class="pom-bar">
+            <div class="pom-bar-fill" id="pom-bar-fill"></div>
+          </div>
+        </div>
+
+        <a href="home.html" id="pom-map-link" class="pom-map-btn" data-i18n="pomMapBtn">
+          🗺️ View on Map
+        </a>
+      </div>
+
+    </div>
+
+    <div class="pom-comments">
+      <h2 class="pom-comments-title" data-i18n="pomCommentsTitle">💬 Reviews This Month</h2>
+      <div id="pom-comments-list"></div>
+      <div id="pom-pagination"></div>
+    </div>
+
+  </main>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/navbar.js"></script>
+  <script src="../js/place-of-month.js"></script>
+</body>
+</html>

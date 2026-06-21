@@ -1,0 +1,245 @@
+/* ── NAVBAR ── */
+.navbar {
+  height: 56px;
+  background: var(--bg2);
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  gap: 1rem;
+  flex-shrink: 0;
+  z-index: 200;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-link {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: all .2s;
+  border: 1px solid transparent;
+}
+
+.nav-link:hover {
+  color: var(--text);
+  background: var(--bg3);
+}
+
+.nav-link.active {
+  color: var(--accent);
+  background: rgba(30,58,95,0.07);
+  border-color: rgba(30,58,95,0.15);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* ── LANGUAGE BUTTON ── */
+.nav-btn {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 5px 11px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  border-radius: 5px;
+  transition: all .2s;
+}
+
+.nav-btn:hover { color: var(--accent); border-color: var(--accent); background: rgba(30,58,95,0.05); }
+
+/* ── KULLANICI DROPDOWN ── */
+.nav-user {
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-username {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all .2s;
+}
+
+.nav-username::before {
+  content: '◉';
+  font-size: 0.75rem;
+  color: var(--accent);
+}
+
+.nav-username::after {
+  content: '▾';
+  font-size: 0.65rem;
+  color: var(--muted);
+}
+
+.nav-user:hover .nav-username {
+  border-color: var(--accent);
+  background: rgba(30,58,95,0.05);
+  color: var(--accent);
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 6px;
+  min-width: 170px;
+  box-shadow: var(--shadow-md);
+  display: none;
+  z-index: 300;
+  animation: fadeInUp .18s ease;
+}
+
+.nav-dropdown.open { display: flex; flex-direction: column; gap: 2px; }
+
+.nav-dropdown a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.84rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all .2s;
+  display: block;
+}
+
+.nav-dropdown a:hover {
+  background: var(--bg3);
+  color: var(--text);
+}
+
+/* ── ARAMA BARI ── */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 1.5rem;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.search-bar .search-box {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+  max-width: 500px;
+}
+
+.search-bar .search-box input {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 14px;
+  color: var(--text);
+  font-size: 0.88rem;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.search-bar .search-box input::placeholder { color: var(--muted); }
+
+.search-bar .search-box input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(30,58,95,0.1);
+}
+
+#search-btn {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.84rem;
+  white-space: nowrap;
+  box-shadow: var(--shadow-accent);
+  border-radius: 6px;
+  padding: 8px 18px;
+}
+
+#search-btn:hover { background: #162d4a; transform: translateY(-1px); }
+
+#locate-btn {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 0.84rem;
+  border-radius: 6px;
+  transition: all .2s;
+}
+
+#locate-btn:hover { border-color: var(--accent2); color: var(--accent2); }
+
+/* ── ABOUT / LANDING NAV BUTONLARI ── */
+.nav-btn-outline {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.84rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color .2s, color .2s;
+}
+.nav-btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+.nav-btn-fill {
+  background: var(--accent);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .2s;
+  box-shadow: var(--shadow-accent);
+}
+.nav-btn-fill:hover { background: #162d4a; transform: translateY(-1px); }
+
+/* ── LAYOUT DÜZELTME ── */
+body {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.layout { flex: 1; overflow: hidden; }

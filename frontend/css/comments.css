@@ -1,0 +1,148 @@
+.comments-section h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+/* ── YORUM KARTI ── */
+.comment-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  transition: border-color .2s, transform .2s;
+  animation: fadeInUp .3s ease forwards;
+}
+
+.comment-card:hover {
+  border-color: var(--accent);
+  transform: translateX(3px);
+}
+
+.comment-card.positive { border-left: 3px solid var(--mood-great); }
+.comment-card.negative { border-left: 3px solid var(--mood-terrible); }
+.comment-card.neutral  { border-left: 3px solid var(--muted); }
+
+.comment-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.comment-stars { color: var(--warning); letter-spacing: 1px; }
+.comment-card p { font-size: 0.87rem; line-height: 1.65; color: var(--text); }
+
+/* ── SAYFALAMA ── */
+#comments-pagination { display: flex; gap: 6px; margin-top: 8px; }
+
+.page-btn {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  width: 30px; height: 30px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  padding: 0;
+  transition: all .2s;
+}
+
+.page-btn:hover  { border-color: var(--accent); color: var(--accent); }
+.page-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: var(--shadow-accent); }
+
+/* ── YORUM FORMU ── */
+.comment-form {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comment-form h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text);
+}
+
+/* ── YILDIZLAR ── */
+.star-rating { display: flex; gap: 5px; }
+
+.star {
+  font-size: 1.5rem;
+  color: var(--border);
+  cursor: pointer;
+  transition: color .15s, transform .15s;
+}
+
+.star:hover  { color: var(--warning); transform: scale(1.2); }
+.star.active { color: var(--warning); filter: drop-shadow(0 0 3px rgba(212,136,10,.4)); }
+
+/* ── TEXTAREA ── */
+.comment-form textarea {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 10px 14px;
+  color: var(--text);
+  font-size: 0.87rem;
+  font-family: var(--font-body);
+  resize: vertical;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  min-height: 80px;
+}
+
+.comment-form textarea::placeholder { color: var(--muted); }
+
+.comment-form textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(30,58,95,0.1);
+}
+
+/* ── GÖNDER BUTONU ── */
+#submit-comment-btn {
+  background: var(--accent);
+  color: #fff;
+  align-self: flex-start;
+  padding: 9px 22px;
+  font-weight: 600;
+  font-size: 0.86rem;
+  border-radius: 7px;
+  box-shadow: var(--shadow-accent);
+  transition: all .2s;
+}
+
+#submit-comment-btn:hover {
+  background: #162d4a;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 18px rgba(30,58,95,0.22);
+}
+
+#submit-comment-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+/* ── MESAJ ── */
+.comment-msg {
+  font-size: 0.84rem;
+  padding: 9px 13px;
+  border-radius: 7px;
+  animation: fadeInUp .2s ease;
+}
+
+.comment-msg.success {
+  background: rgba(45,122,79,.08);
+  border: 1px solid rgba(45,122,79,.25);
+  color: var(--success);
+}
+
+.comment-msg.error {
+  background: rgba(192,57,43,.07);
+  border: 1px solid rgba(192,57,43,.22);
+  color: var(--danger);
+}

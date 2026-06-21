@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mekan — Best Places in Your Area</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/auth.css" />
+  <style>
+    .landing-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      background: rgba(15,17,23,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+    .landing-nav-logo {
+      font-size: 1.2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-decoration: none;
+    }
+    .landing-nav-links { display: flex; gap: 6px; }
+    .landing-nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      padding: 6px 14px;
+      border-radius: 6px;
+      transition: color .2s, background .2s;
+    }
+    .landing-nav-links a:hover { color: var(--text); background: var(--bg2); }
+    .landing-nav-actions { display: flex; gap: 10px; }
+    .nav-btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 7px 16px;
+      border-radius: 7px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: border-color .2s, color .2s;
+    }
+    .nav-btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-btn-fill {
+      background: linear-gradient(135deg, var(--accent), #8b85ff);
+      color: #fff;
+      padding: 7px 16px;
+      border-radius: 7px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all .2s;
+    }
+    .nav-btn-fill:hover { transform: translateY(-1px); box-shadow: var(--shadow-accent); }
+
+    .auth-body { padding-top: 56px; }
+
+    .landing-stats {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .landing-stat { text-align: center; }
+    .landing-stat-val {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .landing-stat-lbl { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+  </style>
+</head>
+<body class="auth-body">
+
+  <nav class="landing-nav">
+    <a href="index.html" class="landing-nav-logo">📍 Mekan</a>
+    <div class="landing-nav-links">
+      <a href="home.html">🗺️ Map</a>
+      <a href="place-of-month.html">🏆 Place of the Month</a>
+      <a href="about.html">ℹ️ About</a>
+    </div>
+    <div class="landing-nav-actions">
+      <a href="login.html" class="nav-btn-outline">Sign In</a>
+      <a href="register.html" class="nav-btn-fill">Sign Up</a>
+    </div>
+  </nav>
+
+  <div class="landing-container">
+    <div class="landing-hero">
+      <div class="landing-logo">📍 Mekan</div>
+      <h1 class="landing-title">Discover the Best Places in Your Area</h1>
+      <p class="landing-subtitle">
+        Real satisfaction scores powered by AI-driven review analysis.
+        Trust the data, not just the stars.
+      </p>
+
+      <div class="landing-features">
+        <div class="feature-item">
+          <span class="feature-icon">🗺️</span>
+          <span>Explore on map</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">🤖</span>
+          <span>AI-powered analysis</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">🏆</span>
+          <span>Real rankings</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">⭐</span>
+          <span>Favorite places</span>
+        </div>
+      </div>
+
+      <div class="landing-actions">
+        <a href="register.html" class="btn-primary">Sign Up Free</a>
+        <a href="about.html" class="btn-secondary">How It Works</a>
+      </div>
+
+      <div class="landing-stats">
+        <div class="landing-stat">
+          <div class="landing-stat-val">AI</div>
+          <div class="landing-stat-lbl">Gemini Analysis</div>
+        </div>
+        <div class="landing-stat">
+          <div class="landing-stat-val">100%</div>
+          <div class="landing-stat-lbl">Real Reviews</div>
+        </div>
+        <div class="landing-stat">
+          <div class="landing-stat-val">∞</div>
+          <div class="landing-stat-lbl">Places to Discover</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="landing-preview">
+      <div class="preview-card">
+        <div class="preview-header">
+          <span>🏆 Place of the Month</span>
+        </div>
+        <div class="preview-place">Kadıköy Coffee House</div>
+        <div class="preview-score">94% Satisfaction</div>
+        <div class="preview-bar">
+          <div class="preview-bar-fill" style="width:94%"></div>
+        </div>
+        <div class="preview-meta">⭐ 4.8 · 128 reviews · 🔥 Trending</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    if (localStorage.getItem('userToken')) {
+      window.location.href = 'home.html';
+    }
+  </script>
+</body>
+</html>

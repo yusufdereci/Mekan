@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up — Mekan</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/auth.css" />
+</head>
+<body class="auth-body">
+
+  <div class="auth-container">
+    <a href="index.html" class="auth-logo">📍 Mekan</a>
+    <div class="auth-box">
+      <h1 class="auth-title">Sign Up</h1>
+      <p class="auth-subtitle">Create a free account and start exploring</p>
+
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" id="username" placeholder="yourusername" />
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="email" placeholder="example@email.com" />
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="password" placeholder="At least 8 characters" />
+      </div>
+      <div class="form-group">
+        <label>Confirm Password</label>
+        <input type="password" id="password-confirm" placeholder="••••••••" />
+      </div>
+
+      <div id="error-msg" class="auth-error hidden"></div>
+
+      <button id="register-btn" class="btn-auth">Sign Up</button>
+
+      <p class="auth-link">
+        Already have an account? <a href="login.html">Sign In</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/auth/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* ── Açık Tema Renk Paleti ── */
+  --bg:         #f5f0e8;      /* krem kağıt */
+  --bg2:        #ffffff;      /* beyaz kart */
+  --bg3:        #eee9df;      /* hafif krem */
+  --border:     #ddd7cc;      /* ince çizgi */
+  --text:       #1a1612;      /* koyu kahve-siyah */
+  --muted:      #8a7f72;      /* mat kahve */
+  --accent:     #1e3a5f;      /* derin lacivert */
+  --accent2:    #c8562a;      /* tuğla kırmızısı */
+  --accent3:    #2d7a4f;      /* orman yeşili */
+  --danger:     #c0392b;
+  --warning:    #d4880a;
+  --success:    #2d7a4f;
+  --radius:     10px;
+  --header-h:   60px;
+
+  /* Memnuniyet renk skalası */
+  --mood-great:    #2d7a4f;
+  --mood-good:     #5a9e3a;
+  --mood-neutral:  #1e3a5f;
+  --mood-bad:      #d4880a;
+  --mood-terrible: #c0392b;
+
+  /* Gölgeler — açık temaya uygun hafif */
+  --shadow-sm:     0 1px 4px rgba(30,20,10,0.08);
+  --shadow-md:     0 4px 16px rgba(30,20,10,0.12);
+  --shadow-accent: 0 4px 20px rgba(30,58,95,0.15);
+  --shadow-success: 0 4px 20px rgba(45,122,79,0.15);
+
+  /* Font sistemi */
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── YARDIMCI SINIFLAR ── */
+.muted  { color: var(--muted); font-size: 0.85rem; }
+.hidden { display: none !important; }
+
+/* ── BUTONLAR ── */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-family: var(--font-body);
+  padding: 8px 16px;
+  transition: opacity .2s, transform .15s, box-shadow .2s;
+}
+
+button:active { transform: scale(0.97); }
+
+/* ── BADGE ── */
+.badge {
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.badge-positive { background: rgba(45,122,79,.12);  color: var(--success); }
+.badge-negative { background: rgba(192,57,43,.12);  color: var(--danger);  }
+.badge-neutral  { background: rgba(138,127,114,.15); color: var(--muted);  }
+
+/* ── SECTION TITLE ── */
+.section-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+/* ── MINI CARD ── */
+.mini-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+  font-size: 0.83rem;
+}
+
+.mini-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-accent);
+}
+
+.mini-card-name { font-weight: 600; margin-bottom: 2px; }
+.mini-card-meta { color: var(--muted); font-size: 0.75rem; }
+
+/* ── TOAST BİLDİRİM ── */
+#toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.toast {
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  box-shadow: var(--shadow-md);
+  animation: toastIn .3s ease forwards;
+  max-width: 320px;
+}
+
+.toast.success { background: #eef6f1; border: 1px solid var(--success); color: var(--success); }
+.toast.error   { background: #fdf0ef; border: 1px solid var(--danger);  color: var(--danger);  }
+.toast.info    { background: #edf1f7; border: 1px solid var(--accent);  color: var(--accent);  }
+.toast.out     { animation: toastOut .3s ease forwards; }
+
+/* ── SKELETON LOADER ── */
+.skeleton {
+  background: linear-gradient(90deg, var(--bg3) 25%, var(--bg) 50%, var(--bg3) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 6px;
+}
+
+.skeleton-line          { height: 12px; margin-bottom: 8px; }
+.skeleton-line.short    { width: 50%; }
+.skeleton-line.medium   { width: 75%; }
+.skeleton-line.full     { width: 100%; }
+
+/* ── ANİMASYONLAR ── */
+@keyframes toastIn    { from { opacity:0; transform:translateX(40px);  } to { opacity:1; transform:translateX(0); } }
+@keyframes toastOut   { from { opacity:1; transform:translateX(0);     } to { opacity:0; transform:translateX(40px); } }
+@keyframes shimmer    { 0%   { background-position:200% 0; } 100% { background-position:-200% 0; } }
+@keyframes fadeInUp   { from { opacity:0; transform:translateY(16px);  } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn     { from { opacity:0; }                              to { opacity:1; } }
+@keyframes slideUp    { from { transform:translateY(100%); opacity:0;  } to { transform:translateY(0); opacity:1; } }
+@keyframes growBar    { from { width:0 !important; } to { } }
+
+.anim-fadeInUp { animation: fadeInUp .35s ease forwards; }
+.anim-fadeIn   { animation: fadeIn   .25s ease forwards; }
+.anim-slideUp  { animation: slideUp  .35s cubic-bezier(.16,1,.3,1) forwards; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .sidebar, .ranking-sidebar { display: none; }
+}

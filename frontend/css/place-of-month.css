@@ -1,0 +1,233 @@
+.pom-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  overflow-y: auto;
+  height: calc(100vh - 56px);
+}
+
+/* ── BAŞLIK ── */
+.pom-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  animation: fadeInUp .4s ease forwards;
+}
+
+.pom-badge {
+  display: inline-block;
+  background: rgba(212,136,10,.1);
+  border: 1px solid rgba(212,136,10,.25);
+  color: var(--warning);
+  padding: 5px 16px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.pom-header h1 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.02em;
+}
+
+.pom-period {
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+/* ── MEKAN KARTI ── */
+.pom-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-md);
+  animation: fadeInUp .5s ease forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+/* üst sağ köşe dekoratif çizgi */
+.pom-card::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 60px; height: 60px;
+  border-top: 2px solid var(--accent);
+  border-right: 2px solid var(--accent);
+  border-radius: 0 10px 0 0;
+}
+
+.pom-card-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pom-score-ring {
+  position: relative;
+  width: 170px;
+  height: 170px;
+}
+
+.pom-score-label {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pom-score-label span {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--accent3);
+  line-height: 1;
+}
+
+.pom-score-label small {
+  font-size: 0.68rem;
+  color: var(--muted);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+
+/* ── SAĞ BİLGİLER ── */
+.pom-card-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.pom-card-right h2 {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.pom-stats { display: flex; gap: 10px; }
+
+.pom-stat {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  flex: 1;
+  transition: border-color .2s;
+}
+
+.pom-stat:hover { border-color: var(--accent); }
+
+.pom-stat span {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--accent3);
+}
+
+.pom-stat small {
+  font-size: 0.68rem;
+  color: var(--muted);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+/* ── BAR ── */
+.pom-bar-wrap { width: 100%; }
+
+.pom-bar {
+  height: 5px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.pom-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent3));
+  border-radius: 3px;
+  transition: width .8s cubic-bezier(.16,1,.3,1);
+  width: 0;
+}
+
+/* ── HARİTA BUTONU ── */
+.pom-map-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.88rem;
+  align-self: flex-start;
+  box-shadow: var(--shadow-accent);
+  transition: all .2s;
+}
+
+.pom-map-btn:hover {
+  background: #162d4a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30,58,95,0.25);
+}
+
+/* ── YORUMLAR ── */
+.pom-comments { animation: fadeInUp .6s ease forwards; }
+
+.pom-comments-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+#pom-pagination {
+  display: flex;
+  gap: 6px;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+/* ── BOŞ DURUM ── */
+.pom-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--muted);
+}
+
+.pom-empty-icon { font-size: 3rem; margin-bottom: 1rem; }
+.pom-empty h2   { font-family: var(--font-display); font-size: 1.3rem; font-weight: 400; margin-bottom: 0.5rem; color: var(--text); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+  .pom-card { grid-template-columns: 1fr; }
+  .pom-card-left { display: none; }
+  .pom-stats { flex-direction: column; }
+}

@@ -1,0 +1,60 @@
+.ranking-item {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+  animation: fadeInUp .3s ease forwards;
+}
+
+.ranking-item:hover {
+  border-color: var(--accent);
+  transform: translateX(-3px);
+  box-shadow: var(--shadow-accent);
+}
+
+/* Sıraya göre özel sol çizgi */
+.ranking-item:nth-child(1) { border-left: 3px solid #c8a84b; }
+.ranking-item:nth-child(2) { border-left: 3px solid #9ba8b5; }
+.ranking-item:nth-child(3) { border-left: 3px solid #b87333; }
+
+.ranking-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.ranking-name  { font-size: 0.86rem; font-weight: 600; color: var(--text); }
+
+.ranking-score {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--accent3);
+}
+
+.ranking-meta { font-size: 0.73rem; color: var(--muted); margin-bottom: 4px; }
+
+.ranking-bar {
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+
+.ranking-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width .6s cubic-bezier(.16,1,.3,1);
+}
+
+/* Skora göre bar rengi */
+.ranking-bar-fill.great    { background: linear-gradient(90deg, var(--mood-great), #5fc98c); }
+.ranking-bar-fill.good     { background: linear-gradient(90deg, var(--mood-good), #8ecf5a); }
+.ranking-bar-fill.neutral  { background: linear-gradient(90deg, var(--accent), #4a6fa0); }
+.ranking-bar-fill.bad      { background: linear-gradient(90deg, var(--mood-bad), #e8aa40); }
+.ranking-bar-fill.terrible { background: linear-gradient(90deg, var(--mood-terrible), #e06055); }

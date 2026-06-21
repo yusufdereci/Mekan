@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mekan — Reviews</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/comments_page.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">📍 Mekan</a>
+    <div class="nav-links">
+      <a href="home.html"           class="nav-link" data-i18n="navMap">🗺️ Map</a>
+      <a href="comments_page.html"  class="nav-link active" data-i18n="navComments">💬 Reviews</a>
+      <a href="place-of-month.html" class="nav-link" data-i18n="navPlaceOfMonth">🏆 Place of the Month</a>
+      <a href="about.html"          class="nav-link" data-i18n="navAbout">ℹ️ About</a>
+    </div>
+    <div class="nav-right">
+      <button id="lang-btn" class="nav-btn">EN</button>
+      <div class="nav-user" id="nav-user">
+        <span class="nav-username" id="nav-username"></span>
+        <div class="nav-dropdown">
+          <a href="home.html" data-i18n="navMap">🗺️ Map</a>
+          <a href="#" id="nav-logout" data-i18n="navLogout">🚪 Sign Out</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="comments-page">
+
+    <div class="comments-feed-col">
+      <div class="col-header">
+        <h2 data-i18n="feedTitle">💬 All Reviews</h2>
+        <span class="col-meta" id="feed-total" data-i18n="feedLoading">loading...</span>
+      </div>
+      <div id="feed-list" class="feed-list">
+        <div class="comment-card-skeleton skeleton"></div>
+        <div class="comment-card-skeleton skeleton"></div>
+        <div class="comment-card-skeleton skeleton"></div>
+      </div>
+      <div id="feed-pagination" class="pagination-bar"></div>
+    </div>
+
+    <div class="comments-search-col">
+      <div class="col-header">
+        <h2 data-i18n="placeSearchTitle">🔍 Reviews by Place</h2>
+      </div>
+      <div class="place-search-box">
+        <input type="text" id="place-search-input" data-i18n-placeholder="placeSearchInput" placeholder="Enter place name or ID..." />
+        <button id="place-search-btn" data-i18n="placeSearchBtn">Search</button>
+      </div>
+      <div id="place-result" class="place-result hidden">
+        <div class="place-result-header">
+          <span id="place-result-name" class="place-result-name"></span>
+          <span id="place-result-count" class="place-result-count"></span>
+        </div>
+        <div id="place-comments-list" class="feed-list"></div>
+        <div id="place-pagination" class="pagination-bar"></div>
+      </div>
+      <div id="place-empty" class="place-empty">
+        <div class="place-empty-icon" data-i18n="placeEmptyIcon">🗺️</div>
+        <p data-i18n="placeEmptyDesc">Search for a place or click a place name on the left</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/navbar.js"></script>
+  <script src="../js/comments_page.js"></script>
+</body>
+</html>

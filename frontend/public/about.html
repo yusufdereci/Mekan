@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mekan — About</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/about.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">📍 Mekan</a>
+    <div class="nav-links">
+      <a href="home.html" class="nav-link" data-i18n="navMap">🗺️ Map</a>
+      <a href="place-of-month.html" class="nav-link" data-i18n="navPlaceOfMonth">🏆 Place of the Month</a>
+      <a href="about.html" class="nav-link active" data-i18n="navAbout">ℹ️ About</a>
+      <a href="comments_page.html" class="nav-link" data-i18n="navComments">💬 Reviews</a>
+    </div>
+    <div class="nav-right">
+      <button id="lang-btn" class="nav-btn">EN</button>
+      <div class="nav-user" id="nav-user">
+        <span class="nav-username" id="nav-username"></span>
+        <div class="nav-dropdown">
+          <a href="home.html" data-i18n="aboutNavBack">🗺️ Back to Map</a>
+          <a href="#" id="nav-logout" data-i18n="navLogout">🚪 Sign Out</a>
+        </div>
+      </div>
+      <div id="nav-guest" class="hidden">
+        <a href="login.html" class="nav-btn-outline" data-i18n="navLogin">Sign In</a>
+        <a href="register.html" class="nav-btn-fill" data-i18n="navRegister">Sign Up</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="about-page">
+
+    <div class="about-hero">
+      <div class="about-hero-logo">📍 Mekan</div>
+      <h1 data-i18n="aboutHeroTitle">AI-Powered Place Discovery Platform</h1>
+      <p data-i18n="aboutHeroDesc">
+        Don't just count the stars — look at real satisfaction scores.
+        Mekan analyzes reviews with AI to give you an honest picture.
+      </p>
+    </div>
+
+    <div class="about-section">
+      <h2 data-i18n="aboutFeaturesTitle">✨ Features</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-card-icon">🤖</div>
+          <h3 data-i18n="feat1Title">AI Review Analysis</h3>
+          <p data-i18n="feat1Desc">Every review is run through Gemini AI for sentiment analysis and content moderation. Fake or malicious reviews are automatically flagged.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card-icon">🗺️</div>
+          <h3 data-i18n="feat2Title">Map-Based Discovery</h3>
+          <p data-i18n="feat2Desc">See what's around you on an interactive Leaflet-powered map. Filter and sort to find exactly what you're looking for.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card-icon">🏆</div>
+          <h3 data-i18n="feat3Title">AI Satisfaction Score</h3>
+          <p data-i18n="feat3Desc">Not just a star average — a composite score built from sentiment analysis, ratings, and positive review ratio.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card-icon">⭐</div>
+          <h3 data-i18n="feat4Title">Favorite Places</h3>
+          <p data-i18n="feat4Desc">Save your favorite places and stay up to date with any changes.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card-icon">🔥</div>
+          <h3 data-i18n="feat5Title">Trend Tracking</h3>
+          <p data-i18n="feat5Desc">Track the places getting the most traction in the last 7 days, in real time.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card-icon">🛡️</div>
+          <h3 data-i18n="feat6Title">Content Moderation</h3>
+          <p data-i18n="feat6Desc">Approve reviews via the admin panel and get AI-powered reply suggestions.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-section">
+      <h2 data-i18n="aboutHowTitle">⚙️ How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4 data-i18n="step1Title">User writes a review</h4>
+            <p data-i18n="step1Desc">After finding a place on the map, the user enters a rating and comment. The form is rate-limited to prevent abuse.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4 data-i18n="step2Title">Gemini AI analyzes it</h4>
+            <p data-i18n="step2Desc">The review is sent to the Gemini 1.5 Flash model for sentiment detection (positive/negative/neutral), satisfaction scoring, and inappropriate content checks.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4 data-i18n="step3Title">AI makes a decision</h4>
+            <p data-i18n="step3Desc">Clean reviews are published automatically. Suspicious content is sent to the admin review queue.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4 data-i18n="step4Title">Score is calculated and published</h4>
+            <p data-i18n="step4Desc">AI score + star average + positive review ratio produce a composite satisfaction percentage. Rankings and "Place of the Month" are determined by this value.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-section">
+      <h2 data-i18n="aboutTechTitle">🔧 Tech Stack</h2>
+      <p data-i18n="aboutTechDesc">Mekan is built on modern, open-source technologies.</p>
+      <div class="tech-list">
+        <span class="tech-badge">Node.js</span>
+        <span class="tech-badge">Express.js</span>
+        <span class="tech-badge">MongoDB</span>
+        <span class="tech-badge">Mongoose</span>
+        <span class="tech-badge">Gemini AI</span>
+        <span class="tech-badge">Leaflet.js</span>
+        <span class="tech-badge">Chart.js</span>
+        <span class="tech-badge">JWT</span>
+        <span class="tech-badge">Bcrypt</span>
+        <span class="tech-badge">express-validator</span>
+        <span class="tech-badge">rate-limiter</span>
+        <span class="tech-badge">Helmet.js</span>
+      </div>
+    </div>
+
+    <div class="about-cta">
+      <h2 data-i18n="aboutCtaTitle">Get Started Now</h2>
+      <p data-i18n="aboutCtaDesc">Create a free account and discover the best places around you.</p>
+      <div class="cta-btns">
+        <a href="register.html" class="btn-primary" data-i18n="aboutCtaRegister">Sign Up Free</a>
+        <a href="home.html" class="btn-secondary" data-i18n="aboutCtaMap">Explore the Map</a>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../js/about-navbar.js"></script>
+  <script src="../js/i18n.js"></script>
+</body>
+</html>
